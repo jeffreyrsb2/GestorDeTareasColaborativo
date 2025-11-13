@@ -5,6 +5,7 @@ Este proyecto es una aplicación web para la gestión de tareas en equipos pequeño
 ## Descripción General
 
 La solución sigue una arquitectura de servicios, separando la lógica de negocio en una API REST (`.Api`) y la interfaz de usuario en una aplicación de Razor Pages (`.Web`) que la consume de forma asíncrona.
+-   **Gitignore:** Se incluye un archivo `.gitignore` estándar para asegurar que solo el código fuente relevante sea versionado, excluyendo binarios y archivos locales, como lo solicita el reto. Este archivo fue creado desde la terminal con `dotnet new gitignore`.
 
 ### Tecnologías Utilizadas
 
