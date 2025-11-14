@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GestorDeTareasColaborativo.Core\GestorDeTareasColaborativo.Core.csproj" />
     <ProjectReference Include="..\GestorDeTareasColaborativo.Data\GestorDeTareasColaborativo.Data.csproj" />
   </ItemGroup>
 
