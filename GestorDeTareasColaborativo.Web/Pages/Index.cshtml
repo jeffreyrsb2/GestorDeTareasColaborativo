@@ -1,10 +1,34 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Gestor de Tareas";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Gestor de Tareas Colaborativo</h1>
+</div>
+
+<div class="container mt-5">
+    <div class="mb-3">
+        <button class="btn btn-primary">Añadir Nueva Tarea</button>
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Usuario Asignado</th>
+                <th>Estado</th>
+                <th>Fecha de Vencimiento</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-tareas-body">
+            <!-- Las filas de tareas se inserta aquí con JavaScript -->
+        </tbody>
+    </table>
+    <div id="loading-spinner" style="display: none; text-align: center;">
+        <p>Cargando tareas...</p>
+    </div>
 </div>
