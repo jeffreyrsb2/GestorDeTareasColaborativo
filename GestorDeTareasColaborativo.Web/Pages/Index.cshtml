@@ -28,6 +28,53 @@
             <!-- Las filas de tareas se inserta aquí con JavaScript -->
         </tbody>
     </table>
+
+    <!-- Modal para Añadir/Editar Tarea -->
+    <div class="modal fade" id="tareaModal" tabindex="-1" role="dialog" aria-labelledby="tareaModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tareaModalLabel">Añadir Nueva Tarea</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-tarea">
+                        <div class="form-group">
+                            <label for="titulo">Título</label>
+                            <input type="text" class="form-control" id="titulo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción</label>
+                            <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaVencimiento">Fecha de Vencimiento</label>
+                            <input type="date" class="form-control" id="fechaVencimiento" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="usuarioId">Asignar a</label>
+                            <select class="form-control" id="usuarioId" required>
+                                <!-- Opciones de usuario se cargarán aquí -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="estadoId">Estado</label>
+                            <select class="form-control" id="estadoId" required>
+                                <!-- Opciones de estado se cargarán aquí -->
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btn-guardar-tarea">Guardar Tarea</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="loading-spinner" style="display: none; text-align: center;">
         <p>Cargando tareas...</p>
     </div>
