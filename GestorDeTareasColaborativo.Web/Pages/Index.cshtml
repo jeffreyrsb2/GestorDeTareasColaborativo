@@ -35,12 +35,11 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="tareaModalLabel">Añadir Nueva Tarea</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="form-tarea">
+                        <input type="hidden" id="tareaId">
                         <div class="form-group">
                             <label for="titulo">Título</label>
                             <input type="text" class="form-control" id="titulo" required>
@@ -68,7 +67,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary" id="btn-guardar-tarea">Guardar Tarea</button>
                 </div>
             </div>
