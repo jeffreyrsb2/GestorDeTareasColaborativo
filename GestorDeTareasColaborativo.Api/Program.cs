@@ -1,4 +1,26 @@
+using GestorDeTareasColaborativo.Data.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// CORS
+var myAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: myAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("https://localhost:7224", "http://localhost:5013")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                      });
+});
+
+// Registro del DbContext con la cadena de conexión
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<GestorDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 // Add services to the container.
 
@@ -17,6 +39,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Habilitar CORS
+app.UseCors(myAllowSpecificOrigins);
 
 app.UseAuthorization();
 
