@@ -1,4 +1,12 @@
+using GestorDeTareasColaborativo.Data.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Registro del DbContext con la cadena de conexión
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<GestorDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 // Add services to the container.
 
